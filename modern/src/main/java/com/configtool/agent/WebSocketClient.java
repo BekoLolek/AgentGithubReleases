@@ -14,10 +14,11 @@ public class WebSocketClient extends org.java_websocket.client.WebSocketClient {
     private final ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
     private ScheduledFuture<?> heartbeat;
 
-    public WebSocketClient(ConfigToolAgent plugin, String uri, FileOperations fileOps) throws Exception {
+    public WebSocketClient(ConfigToolAgent plugin, String uri, String token, FileOperations fileOps) throws Exception {
         super(new URI(uri));
         this.plugin = plugin;
         this.fileOps = fileOps;
+        addHeader("Authorization", "Bearer " + token);
         setConnectionLostTimeout(60);
     }
 

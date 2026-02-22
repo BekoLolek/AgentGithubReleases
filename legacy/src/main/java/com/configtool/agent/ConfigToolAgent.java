@@ -102,7 +102,7 @@ public class ConfigToolAgent extends JavaPlugin implements CommandExecutor {
     public void connect() {
         if (wsClient != null && wsClient.isOpen()) return;
         try {
-            wsClient = new WebSocketClient(this, serverUrl + "?token=" + token, fileOps);
+            wsClient = new WebSocketClient(this, serverUrl + "?token=" + token, token, fileOps);
             wsClient.connect();
         } catch (Exception e) {
             getLogger().severe("Failed to connect: " + e.getMessage());
