@@ -1,0 +1,16 @@
+name: ConfigToolAgent
+version: 1.0.0
+main: com.configtool.agent.ConfigToolAgent
+api-version: '1.13'
+description: Remote config management agent for ConfigTool (Legacy - 1.8-1.16)
+author: ConfigTool
+softdepend: [Vault]
+commands:
+  configtool:
+    description: ConfigTool agent commands
+    permission: configtool.admin
+    aliases: [ct, configtoolagent]
+permissions:
+  configtool.admin:
+    description: Allows use of ConfigTool commands
+    default: op

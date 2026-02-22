@@ -1,0 +1,35 @@
+# ConfigTool Agent Configuration
+# Get your token from the ConfigTool dashboard
+
+# Backend server URL (WebSocket endpoint)
+server-url: "wss://configtoolapi.onrender.com/agent"
+
+# Your server's authentication token
+token: "paste-your-token-here"
+
+# Module configuration - toggle features on/off
+modules:
+  dashboard:
+    enabled: true
+    metrics-interval-seconds: 10
+  plugins:
+    enabled: true
+    allow-enable-disable: true
+  analytics:
+    enabled: true
+    player-tracking: true
+    batch-interval-seconds: 30
+  economy:
+    enabled: true
+    snapshot-interval-seconds: 300
+  performance:
+    enabled: true
+    tick-sample-interval-ticks: 600
+  world-management:
+    enabled: true
+  quick-actions:
+    enabled: true
+  console:
+    enabled: true
+    buffer-size: 1000
+    flush-interval-seconds: 5
