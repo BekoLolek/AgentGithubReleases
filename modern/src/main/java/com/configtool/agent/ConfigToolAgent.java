@@ -25,8 +25,8 @@ public class ConfigToolAgent extends JavaPlugin implements CommandExecutor {
     @Override
     public void onEnable() {
         saveDefaultConfig();
-        serverUrl = getConfig().getString("server-url", "wss://your-backend.fly.dev/agent");
-        token = getConfig().getString("token", "");
+        serverUrl = getConfig().getString("server-url", "wss://your-backend.fly.dev/agent").trim();
+        token = getConfig().getString("token", "").trim();
 
         if (token.isEmpty() || token.equals("paste-your-token-here")) {
             getLogger().severe("No token configured! Add your token to plugins/ConfigToolAgent/config.yml");
